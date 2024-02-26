@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <script>
+      const baseUrl = "{{ url_for('static', filename='') }}";
+    </script>
+    <script
+      type="module"
+      src="{{ url_for('serve_js', filename='settings.js') }}"
+    ></script>
+
+    <link href="/static/images/favicon.png" rel="icon" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      href="{{ url_for('static', filename='css/styles.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='css/navstyles.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='css/examples.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='css/style1.css') }}"
+      rel="stylesheet"
+      name="dynamic"
+    />
+    <link
+      href="{{ url_for('static', filename='css/circle.css') }}"
+      rel="stylesheet"
+      name="dynamic"
+    />
+    <link
+      href="{{ url_for('static', filename='css/blink.css') }}"
+      rel="stylesheet"
+      name="dynamic"
+    />
+    <link
+      href="{{ url_for('static', filename='css/navstyles1.css') }}"
+      rel="stylesheet"
+      name="dynamic"
+    />
+
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="nav-container" id="nav-container" tabindex="-1">
+        <div class="three-dots"></div>
+        <div class="dropdown">
+          <ul class="nav-list">
+            <li
+              class="nav-item {% if active_page == 'home' %}active{% endif %}"
+            >
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li
+              class="nav-item {% if active_page == 'set_timer' %}active{% endif %}"
+            >
+              <a class="nav-link" href="/set_timer">Set Timer</a>
+            </li>
+            <li
+              class="nav-item {% if active_page == 'settings' %}active{% endif %}"
+            >
+              <a class="nav-link" href="/settings">Settings</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      <header>
+        {% if messages %}
+        <div class="alert" role="alert">
+          <ul class="flash-messages">
+            {% for category, message in messages %}
+            <li class="{{ category }}">
+              {% if category == 'safe' %}{{ message | safe }}{% else %}{{
+              message }}{% endif %}
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+      </header>
+      {% endwith %}
+
+      <main>{% block main %}{% endblock %}</main>
+    </div>
+    <script
+      type="module"
+      src="{{ url_for('serve_js', filename='timerscripts.js') }}"
+    ></script>
+    <script
+      type="module"
+      src="{{ url_for('serve_js', filename='timerClasses.js') }}"
+    ></script>
+  </body>
+</html>

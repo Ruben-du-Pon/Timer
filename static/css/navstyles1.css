@@ -1,0 +1,27 @@
+/* Three dots menu inspired by https://codepen.io/GiacomoSorbi/pen/eBbbRd */
+
+.active {
+  background-color: #505050;
+}
+
+.dropdown {
+  background-color: #202020;
+  box-shadow: 0px 0px 3px 3px #202020;
+}
+
+.navbar {
+  background-color: #202020;
+  color: #ddddfa;
+}
+
+.nav-link:link,
+.nav-link:visited,
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active {
+  color: #ddddfa;
+}
+
+.three-dots:after {
+  color: #ddddfa;
+}

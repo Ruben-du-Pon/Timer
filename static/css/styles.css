@@ -1,0 +1,283 @@
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+a:link,
+a:visited,
+a:hover,
+a:focus,
+a:active {
+  color: #ddddfa;
+  text-decoration: none;
+}
+
+body {
+  background-color: #202020;
+  box-sizing: border-box;
+  color: #ddddfa;
+  font: 1rem serif;
+  margin: 0;
+  max-width: 100vw;
+}
+
+button {
+  color: #202020;
+}
+
+header {
+  height: auto;
+}
+
+html {
+  font-size: 1.15vmin;
+}
+
+input,
+select {
+  border: 0.2rem solid #000000;
+  border-radius: 0.5rem;
+  color: #202020;
+  opacity: 1;
+}
+
+input:focus,
+select:focus {
+  outline: #ddddfa solid 0.25rem;
+}
+
+input::placeholder,
+select::-ms-value {
+  color: #202020;
+  opacity: 1;
+}
+
+main {
+  box-sizing: border-box;
+  max-height: 92.5vh;
+  max-width: 100%;
+  padding: 2vh 2vw;
+  width: 100%;
+}
+
+.add-timer-button {
+  border: 0.5rem outset #000000;
+  border-radius: 20%;
+  box-sizing: border-box;
+  color: #202020;
+  font-size: 3rem;
+  height: 7.5vmin;
+  line-height: 6vmin;
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  right: 3.5%;
+  text-align: center;
+  width: 7.5vmin;
+}
+
+.alert {
+  align-items: center;
+  background-color: rgba(255, 0, 0, 0.5);
+  box-sizing: border-box;
+  display: flex;
+  font-size: 2.5rem;
+  height: auto;
+  justify-content: center;
+  width: 100vw;
+}
+
+.blink {
+  animation: blink 1s;
+  animation-iteration-count: infinite;
+}
+
+.container {
+  box-sizing: border-box;
+  max-width: 100vw;
+  padding: 0;
+  width: 100vw;
+}
+
+.counting-up {
+  background-image: conic-gradient(#ff0000 0deg, #ff0000 360deg) !important;
+  color: #ddddfa !important;
+}
+
+.flash-link:link,
+.flash-link:visited,
+.flash-link:hover,
+.flash-link:focus,
+.flash-link:active {
+  color: #ddddfa;
+}
+
+.flash-messages {
+  list-style: none;
+}
+
+.icon {
+  margin: 0.2rem;
+  width: 5rem;
+}
+
+.login-button,
+.register-button,
+.settings-button {
+  border-radius: 1.5rem;
+  font-size: 2.5rem;
+  padding: 0.75rem;
+}
+
+.login-container,
+.register-container,
+.settins-container {
+  font-size: 2.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
+
+.login-container input,
+.register-container input,
+.settings-container input,
+.settings-container select {
+  font-size: 2rem;
+  height: fit-content;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  width: 20%;
+}
+
+.login-label,
+.register-label {
+  display: inline-block;
+  width: 12.5vw;
+}
+
+.main-timer-container,
+.main-timer-input-container {
+  box-sizing: border-box;
+  margin: 0.5rem;
+  width: 100%;
+}
+
+.main-timer-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.remove-timer-button {
+  border: 0.5rem outset #000000;
+  border-radius: 20%;
+  box-sizing: border-box;
+  color: #202020;
+  font-size: 3rem;
+  height: 7.5vmin;
+  line-height: 6vmin;
+  margin-bottom: 1.33vh;
+  padding: 0;
+  position: absolute;
+  bottom: 7vh;
+  right: 3.5%;
+  text-align: center;
+  width: 7.5vmin;
+}
+
+.settings-header,
+.welcome-header {
+  font-size: 5rem;
+  margin: 1rem;
+  position: relative;
+  top: 0;
+}
+
+.settings-label {
+  font-size: 2.5rem;
+  min-width: fit-content;
+  width: 25vw;
+}
+
+.sub-timers-input-container {
+  box-sizing: border-box;
+  margin: 0.5rem;
+  position: relative;
+  width: 80%;
+}
+
+.timer-button {
+  border: 0.5rem outset #000000;
+  border-radius: 1.25rem;
+  box-sizing: border-box;
+  color: #202020;
+  font-size: 5rem;
+  height: fit-content;
+  line-height: 5rem;
+  margin: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  width: fit-content;
+}
+
+.timer-button-container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.timer-container {
+  background-color: #ffffff;
+  box-sizing: border-box;
+  border-radius: 1rem;
+  color: #202020;
+  display: inline-block;
+  height: 7.5vh;
+  line-height: 7.5vh;
+  font-size: 3rem;
+  text-align: center;
+  width: calc(95% - 40rem);
+}
+
+.timer-label {
+  border-radius: 1rem;
+  display: inline-block;
+  height: 5vh;
+  line-height: 5vh;
+  font-size: 2.25rem;
+  padding: 0.5rem;
+  text-align: left;
+  width: 20rem;
+}
+
+.timers-container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+
+.welcome-container {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 0;
+  width: 75%;
+}
+
+.welcome-text {
+  font-size: 3rem;
+}
+
+.welcome-text a {
+  font-style: italic;
+  font-weight: bold;
+}

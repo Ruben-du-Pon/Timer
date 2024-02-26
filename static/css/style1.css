@@ -1,0 +1,176 @@
+a:link,
+a:visited,
+a:hover,
+a:focus,
+a:active {
+  color: #ddddfa;
+  text-decoration: none;
+}
+
+body {
+  background-color: #202020;
+  color: #ddddfa;
+  font: 1rem serif;
+}
+
+button {
+  color: #202020;
+}
+
+html {
+  font-size: 1.15vmin;
+}
+
+input,
+select {
+  border: 0.2rem solid #000000;
+  border-radius: 0.5rem;
+  color: #202020;
+  opacity: 1;
+}
+
+input:focus,
+select:focus {
+  outline: #ddddfa solid 0.25rem;
+}
+
+input::placeholder,
+select::-ms-value {
+  color: #202020;
+  opacity: 1;
+}
+
+.add-timer-button {
+  border: 0.5rem outset #000000;
+  border-radius: 20%;
+  color: #202020;
+  font-size: 3rem;
+  height: 7.5vmin;
+  line-height: 6vmin;
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  right: 3.5%;
+  text-align: center;
+  width: 7.5vmin;
+}
+
+.flash-link:link,
+.flash-link:visited,
+.flash-link:hover,
+.flash-link:focus,
+.flash-link:active {
+  color: #ddddfa;
+}
+
+.icon {
+  margin: 0.2rem;
+  width: 5rem;
+}
+
+.login-button,
+.register-button,
+.settings-button {
+  border-radius: 1.5rem;
+  font-size: 2.5rem;
+  padding: 0.75rem;
+}
+
+.login-container,
+.register-container,
+.settins-container {
+  font-size: 2.5rem;
+}
+
+.login-container input,
+.register-container input,
+.settings-container input,
+.settings-container select {
+  font-size: 2rem;
+}
+
+.main-timer {
+  color: #ddddfa;
+}
+
+.remove-timer-button {
+  border: 0.5rem outset #000000;
+  border-radius: 20%;
+  box-sizing: border-box;
+  color: #202020;
+  font-size: 3rem;
+  height: 7.5vmin;
+  line-height: 6vmin;
+  margin-bottom: 1.33vh;
+  padding: 0;
+  position: absolute;
+  bottom: 7vh;
+  right: 3.5%;
+  text-align: center;
+  width: 7.5vmin;
+}
+
+.settings-header,
+.welcome-header {
+  font-size: 5rem;
+  margin: 1rem;
+  position: relative;
+  top: 0;
+}
+
+.settings-label {
+  font-size: 2.5rem;
+  min-width: fit-content;
+  width: 25vw;
+}
+
+.sub-timer {
+  color: #ddddfa;
+}
+
+.timer-button {
+  border: 0.5rem outset #000000;
+  border-radius: 1.25rem;
+  box-sizing: border-box;
+  color: #202020;
+  font-size: 5rem;
+  height: fit-content;
+  line-height: 5rem;
+  margin: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  width: fit-content;
+}
+
+.timer-container {
+  background-color: #ffffff;
+  box-sizing: border-box;
+  border-radius: 1rem;
+  color: #202020;
+  display: inline-block;
+  height: 7.5vh;
+  line-height: 7.5vh;
+  font-size: 3rem;
+  text-align: center;
+  width: calc(95% - 40rem);
+}
+
+.timer-label {
+  border-radius: 1rem;
+  display: inline-block;
+  height: 5vh;
+  line-height: 5vh;
+  font-size: 2.25rem;
+  padding: 0.5rem;
+  text-align: left;
+  width: 20rem;
+}
+
+.welcome-text {
+  font-size: 3rem;
+}
+
+.welcome-text a {
+  font-style: italic;
+  font-weight: bold;
+}

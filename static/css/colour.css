@@ -1,0 +1,6 @@
+.threshold {
+  --percent: calc(
+    (1 - var(--currenttime) / var(--starttime)) * 100%
+  ) !important;
+  background-image: var(--gradient-type) !important;
+}

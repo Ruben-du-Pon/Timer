@@ -1,0 +1,124 @@
+{% extends "layout.html" %} {% block title %} Settings {% endblock %} {% block
+main %}
+<h1 class="settings-header">Settings</h1>
+<div class="settings-container">
+  <form id="settingsForm" action="/settings" method="post">
+    <p>
+      <label for="timerShape" class="settings-label">Timer Shape:</label>
+      <select id="timerShape" class="settings-input" name="timer_shape">
+        <option value="circle">Circle</option>
+        <option value="rectangle">Rectangle</option>
+      </select>
+    </p>
+    <p>
+      <label for="thresholdValue" class="settings-label"
+        >Threshold Value:</label
+      >
+      <input
+        autofocus
+        id="thresholdValue"
+        class="settings-input"
+        type="number"
+        name="threshold_value"
+        value="10"
+      />
+    </p>
+    <p>
+      <label for="thresholdBehaviour" class="settings-label"
+        >Threshold Behaviour:</label
+      >
+      <select
+        id="thresholdBehaviour"
+        class="settings-input"
+        name="threshold_behaviour"
+      >
+        <option value="blink">Blink</option>
+        <option value="colour">Change Colour</option>
+        <option value="both">Blink and Change Colour</option>
+      </select>
+    </p>
+    <button type="submit" class="settings-button">Apply Settings</button>
+  </form>
+</div>
+<div id="settingsExample" class="settings-example-1">
+  <div class="example-main-timer">
+    <div
+      id="exampleTimer"
+      class="example-timer circle"
+      style="
+        --starttime: 3600;
+        --currenttime: 3600;
+        --gradient-type: conic-gradient(
+          rgba(0, 136, 0, 0) 0%,
+          rgba(0, 136, 0, 0) var(--percent),
+          rgb(0, 136, 0) var(--percent)
+        );
+      "
+    >
+      {{ 3600 | format_duration }}
+      <p class="example-info">Your main timer</p>
+    </div>
+  </div>
+
+  <div id="exampleSubTimersContainer" class="example-sub-timers-container">
+    <div class="example-sub-timer-container">
+      <div
+        id="exampleSubTimer1"
+        class="example-sub-timer circle"
+        style="
+          --starttime: 2700;
+          --currenttime: 2700;
+          --gradient-type: conic-gradient(
+            rgba(0, 136, 0, 0) 0%,
+            rgba(0, 136, 0, 0) var(--percent),
+            rgb(0, 136, 0) var(--percent)
+          );
+        "
+        name="subTimer"
+      >
+        {{ 2700 | format_duration }}
+        <p class="example-info">Section 1</p>
+      </div>
+
+      <div
+        id="exampleSubTimer2"
+        class="example-sub-timer circle"
+        style="
+          --starttime: 870;
+          --currenttime: 870;
+          --gradient-type: conic-gradient(
+            rgba(0, 136, 0, 0) 0%,
+            rgba(0, 136, 0, 0) var(--percent),
+            rgb(0, 136, 0) var(--percent)
+          );
+        "
+        name="subTimer"
+      >
+        {{ 870 | format_duration }}
+        <p class="example-info">Section 2</p>
+      </div>
+      <div
+        id="exampleSubTimer3"
+        class="example-sub-timer circle"
+        style="
+          --starttime: 30;
+          --currenttime: 30;
+          --gradient-type: conic-gradient(
+            rgba(0, 136, 0, 0) 0%,
+            rgba(0, 136, 0, 0) var(--percent),
+            rgb(0, 136, 0) var(--percent)
+          );
+        "
+        name="subTimer"
+      >
+        {{ 30 | format_duration }}
+        <p class="example-info">Section 3</p>
+      </div>
+    </div>
+  </div>
+</div>
+<script
+  type="module"
+  src="{{ url_for('serve_js', filename='examples.js') }}"
+></script>
+{% endblock %} {% set active_page = 'settings' %}

@@ -1,0 +1,10 @@
+base64
+datetime
+Flask
+flask_session
+flask_sqlalchemy
+functools
+os
+python-dotenv
+sqlalchemy
+uuid6

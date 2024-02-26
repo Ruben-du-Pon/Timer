@@ -1,0 +1,69 @@
+{% extends "layout.html" %} {% block title %}Timer: {{ timer.name }}
+{%endblock%} {% block main %}
+
+<div class="timers-container">
+  <div class="main-timer-container">
+    <div
+      id="mainTimer"
+      class="main-timer"
+      style="--starttime: {{ timer.duration }}; --currenttime: {{ timer.duration }};">
+      {{ timer.duration | format_duration }}
+      <p class="timer-info">{{ timer.name }}</p>
+    </div>
+    <div class="timer-button-container">
+      <button id="mainTimerPause" class="timer-button">
+        <span class="glyphicon">&#xe072;&#xe073;</span>
+      </button>
+      <button id="reloadButton" class="timer-button">
+        <span class="glyphicon">&#xe031;</span>
+      </button>
+    </div>
+  </div>
+
+  <div id="subTimersContainer" class="sub-timers-container">
+    {% for subtimer in timer.subtimers %}
+    <div class="sub-timer-container">
+      <div
+        id="subTimer{{ loop.index }}"
+        class="sub-timer"
+        style="--starttime: {{ subtimer.duration }}; --currenttime: {{ subtimer.duration }};"
+        name="subTimer">
+        {{ subtimer.duration | format_duration }}
+        <p class="timer-info">{{ subtimer.name }}</p>
+      </div>
+      <div class="timer-button-container">
+        {% if loop.index != 1 %}
+        <button
+          id="previous-timer-button{{ loop.index }}"
+          class="timer-button"
+          name="subTimer{{ loop.index }}">
+          <span class="glyphicon" name="subTimer{{ loop.index }}">
+            &#xe069;
+          </span>
+        </button>
+        {% endif %}
+        <button
+          id="pause-timer-button{{ loop.index }}"
+          class="timer-button"
+          name="subTimer{{ loop.index }}">
+          <span class="glyphicon" name="subTimer{{ loop.index }}">
+            &#xe072;&#xe073;
+          </span>
+        </button>
+        {% if loop.index != loop.length %}
+        <button
+          id="next-timer-button{{ loop.index }}"
+          class="timer-button"
+          name="subTimer{{ loop.index }}">
+          <span class="glyphicon" name="subTimer{{ loop.index }}">
+            &#xe077;
+          </span>
+        </button>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,99 @@
+{% extends "layout.html" %} {% block title %} Home {% endblock %} {% block main
+%}
+<form action="/set_timer" method="post">
+  <div id="timersContainer" class="timers-container">
+    <div class="main-timer-input-container">
+      <label for="mainTimerName" class="timer-label">Name your timer</label>
+      <input
+        id="mainTimerName"
+        class="timer-label"
+        name="mainTimerName"
+        type="text"
+        placeholder="Total time:"
+        autocomplete="off"
+      />
+      <input
+        id="mainTimer"
+        class="timer-container"
+        name="mainTimer"
+        type="time"
+        step="1"
+        value="00:00:00"
+        autofocus
+        autocomplete="off"
+      />
+    </div>
+
+    <div id="subTimersContainer" class="sub-timers-input-container">
+      <label id="label1" for="subTimerName1" class="timer-label"
+        >Name this section</label
+      >
+      <input
+        id="subTimerName1"
+        class="timer-label"
+        name="subTimerName"
+        type="text"
+        placeholder="Section 1:"
+        autocomplete="off"
+      />
+      <input
+        id="subTimer1"
+        class="timer-container"
+        name="subTimer"
+        type="time"
+        step="1"
+        value="00:00:00"
+        autocomplete="off"
+      />
+      <label id="label2" for="subTimer2" class="timer-label"
+        >Name this section</label
+      >
+      <input
+        id="subTimerName2"
+        class="timer-label"
+        name="subTimerName"
+        type="text"
+        placeholder="Section 2:"
+        autocomplete="off"
+      />
+      <input
+        id="subTimer2"
+        class="timer-container"
+        name="subTimer"
+        type="time"
+        step="1"
+        value="00:00:00"
+        autocomplete="off"
+      />
+    </div>
+    <button
+      id="removeTimerButton"
+      class="remove-timer-button"
+      type="button"
+      onclick="removeSubTimer()"
+    >
+      -
+    </button>
+    <button
+      id="addTimerButton"
+      class="add-timer-button"
+      type="button"
+      onclick="addSubTimer()"
+    >
+      +
+    </button>
+  </div>
+  <button id="startTimers" class="timer-button" type="submit">
+    Generate Timer
+  </button>
+  <button
+    id="resetTimerButton"
+    class="timer-button"
+    type="button"
+    onclick="resetTimers()"
+  >
+    Reset
+  </button>
+</form>
+
+{% endblock %} {% set active_page = 'set_timer' %}
