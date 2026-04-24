@@ -1,37 +1,77 @@
 # Overflow Presentation Timer
 
-by Ruben du Pon
+*by Ruben du Pon*
 
-Main timer screen: | Setting a timer: | Settings screen:
--------------------|------------------|------------------
-<img src="static/images/timer.png" alt="main timer screen" width="100%"> | <img src="static/images/set_timer.png" alt="setting a timer" width="100%">| <img src="static/images/settings.png" alt="settings screen" width="100%">
+A web-based timer with subtimers that turn red and count upward when their time limit is exceeded — so you always know exactly how far over you are and how much time you need to make up.
 
-## What is the Overflow Presentation Timer?
+| Main timer | Set a timer | Settings |
+|:---:|:---:|:---:|
+| ![Main timer screen](static/images/timer.png) | ![Setting a timer](static/images/set_timer.png) | ![Settings screen](static/images/settings.png) |
 
-The overflow Presentation Timer is a timer with subtimers. When a subtimer reaches 0 it will show a red background 
-and start counting up. This way you will know when you took longer than planned for one of your sections, and how 
-much time you will need to make up in the rest of your presentation. If you struggle with a sense of time, this can be 
-very useful! This timer is designed for anyone who needs to keep track of the time they have for their sections. While 
-it is mainly designed for a presentation or educational context, it can be used in many different ways! Subtimers can 
-even be run simultaneously, for use in for instance a kitchen, where you have a main dish and different side dishes, or 
-a certain amount of time to make all the dishes for one table.
+## Features
 
-## How does it work?
+- **Overflow tracking** — when a subtimer hits 0, it flips to a red background and starts counting up, showing exactly how much time you've gone over
+- **Named timers** — label each subtimer to keep track of your sections at a glance
+- **Sequential or simultaneous subtimers** — step through subtimers one by one, or start any subtimer independently at any time
+- **Navigate freely** — jump forward and backward between subtimers if you need to adjust on the fly
+- **Flexible use cases** — designed for presentations and teaching, but works for anything with timed sections (cooking, workshops, meetings, etc.)
 
-Simple, just open the app, click the link or go to set timer from the menu, and enter
-the time of your main timer and sub timers. You can name your timers as well, to help
-you keep track of which timer is counting what. Add subtimers as much as you need.
-When you're done, click on "Generate Timer" and your timer is ready to be used!
-When you click the play/pause button on the main timer, both it and the first subtimer
-will start automatically. To go to the next subtimer, simply click the next button.
-If you made a mistake and went to the next timer too early, you can click the previous
-button to go back. If you want to start a subtimer without stopping the previous one
-you can click the play/pause button on any of the subtimers to start them immediately.
-
-## Watch a video here
-
-
+## Demo
 
 https://github.com/minprog-platforms/project-Ruben-du-Pon/assets/151724616/2ead293e-d424-46a9-af2e-dd38dbd95bcf
 
+## Getting Started
 
+### Prerequisites
+
+- Python 3.x
+- pip
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Ruben-du-Pon/Timer.git
+   cd Timer
+   ```
+
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Set up environment variables by creating a `.env` file in the project root:
+   ```
+   SECRET_KEY=your_secret_key_here
+   ```
+
+4. Run the app:
+   ```bash
+   flask run
+   ```
+
+5. Open your browser and go to `http://127.0.0.1:5000`
+
+## How to Use
+
+1. From the home screen, click the link or navigate to **Set Timer** in the menu.
+2. Enter the duration for your main timer and add as many subtimers as you need.
+3. Give each timer a name to help you track your sections.
+4. Click **Generate Timer** when you're done — your timer is ready!
+5. Press the **play/pause** button on the main timer to start both it and the first subtimer simultaneously.
+6. Use the **next** and **previous** buttons to move between subtimers in order.
+7. To start a subtimer independently without stopping the current one, press its own **play/pause** button directly.
+
+## Tech Stack
+
+| Component | Technology |
+|---|---|
+| Backend | [Flask](https://flask.palletsprojects.com/) |
+| Database | [SQLAlchemy](https://www.sqlalchemy.org/) + [Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/) |
+| Sessions | [Flask-Session](https://flask-session.readthedocs.io/) |
+| Frontend | JavaScript, CSS, HTML |
+| Environment | [python-dotenv](https://pypi.org/project/python-dotenv/) |
+
+## License
+
+This project is licensed under the [GNU AGPL-3.0 License](LICENSE).
